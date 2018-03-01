@@ -14,10 +14,14 @@ debug: $(NAME1)
 common: common.c
 	$(COMPILE) -c common.c $(FLAGS)
 time: 
-	$(COMPILE) -c $(FLAGS)  
-$(NAME1): $(NAME1).c 
-	$(COMPILE) -c $(FLAGS) $(NAME1).cpp 
-	$(COMPILE) $(FLAGS) $(NAME1).o -o $(NAME1)
+	$(COMPILE) -c $(FLAGS)
+push:
+	git add -A
+	git commit
+	git push 
+$(NAME1): $(NAME1).cpp 
+	$(COMPILE) -c $(FLAGS) $(NAME1).cpp $(HEADERS)
+	$(COMPILE) $(FLAGS) *.o -o $(NAME1)
 $(NAME2): $(NAME2).cpp
 	$(COMPILE) -c $(FLAGS) $(NAME2).c
 	$(COMPILE) $(FLAGS) $(NAME2).o -o $(NAME2)
