@@ -11,4 +11,4 @@ typedef int (*PageReplacementPolicy)(const std::vector<int>&, int);
 int PRP_FIFO(const std::vector<int>& workload, int memsize);
 int PRP_OPT(const std::vector<int>& workload, int memsize);
 
-#endif /* end of include guard: POLICIES_H_ */
+#endif /* end of include guard: POLICIES_HPP_ */
