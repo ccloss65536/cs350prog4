@@ -1,4 +1,5 @@
 #Carl Closs, Timothy Shores
+SHELL := /bin/bash
 NUM = 4
 HEADERS = 
 COMPILE = g++
@@ -16,9 +17,12 @@ common: common.c
 time: 
 	$(COMPILE) -c $(FLAGS)
 push:
+	@read -p "commit message (input ctrl+C to stop the push process, 1 line only): " MESSAGE
 	git add -A
-	git commit
+	git commit -m $(MESSAGE)
 	git push 
+	@#Only in bash, read can have a prompt,
+	@#and put the entire imput string into an enviroment variable called $REPLY
 $(NAME1): $(NAME1).cpp 
 	$(COMPILE) -c $(FLAGS) $(NAME1).cpp $(HEADERS)
 	$(COMPILE) $(FLAGS) *.o -o $(NAME1)
