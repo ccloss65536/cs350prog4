@@ -17,9 +17,9 @@ common: common.c
 time: 
 	$(COMPILE) -c $(FLAGS)
 push:
-	@read -p "commit message (input ctrl+C to stop the push process, 1 line only): " MESSAGE
+	#@read -p "commit message (input ctrl+C to stop the push process, 1 line only): " MESSAGE
 	git add -A
-	git commit -m "$(MESSAGE)"
+	git commit #-m "$(MESSAGE)"
 	git push 
 	@#Only in bash, read can have a prompt,
 	@#and put the entire imput string into an enviroment variable called $REPLY
@@ -36,6 +36,6 @@ submit: $(NAME1) clean
 ifneq "$(findstring remote, $(HOSTNAME))"  "remote"
 		firefox submit.htm
 else 
-		mutt -s "CA$(NUM)_submission" ccloss1@binghamton.edu <submit.htm -a ../$(FILE)
+		mutt -s "Prog$(NUM)_submission" ccloss1@binghamton.edu <submit.htm -a ../$(FILE)
 endif
 	#hack to determine whether we should use firefox or email to self
