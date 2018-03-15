@@ -119,5 +119,14 @@ int PRP_RAND(const vector<int>& workload, int memsize){
 	}
 	return hits;
 }
- 
-			
+
+int PRP_LRU(const vector<int>& workload, int memsize) {
+    // TODO
+    return 0;
+}
+
+int PRP_Clock(const vector<int>& workload, int memsize) {
+    // TODO
+    return 0;
+}
+
