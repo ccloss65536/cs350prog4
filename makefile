@@ -19,7 +19,7 @@ time:
 push:
 	@read -p "commit message (input ctrl+C to stop the push process, 1 line only): " MESSAGE
 	git add -A
-	git commit -m $MESSAGE
+	git commit -m "$(MESSAGE)"
 	git push 
 	@#Only in bash, read can have a prompt,
 	@#and put the entire imput string into an enviroment variable called $REPLY
