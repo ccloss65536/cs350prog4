@@ -12,6 +12,6 @@ int PRP_FIFO(const std::vector<int>& workload, unsigned int memsize);
 int PRP_OPT(const std::vector<int>& workload, unsigned int memsize);
 int PRP_RAND(const std::vector<int>& workload, unsigned int memsize);
 int PRP_LRU(const std::vector<int>& workload, unsigned int memsize);
-int PRP_Clock(const std::vector<int>& workload, unsigned int memsize);
+int PRP_CLOCK(const std::vector<int>& workload, unsigned int memsize);
 
 #endif /* end of include guard: POLICIES_HPP_ */
