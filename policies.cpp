@@ -96,7 +96,6 @@ int PRP_RAND(const vector<int>& workload, unsigned int memsize){
 	vector<int> pages_in_mem;
 	default_random_engine random_engine;
 	random_engine.seed(std::time(NULL));
-	uniform_int_distribution<int> gen(0 , pages_in_mem.size() - 1);
 	int hits = 0;
 	for(unsigned int i = 0; i < workload.size(); i++){
 		bool found = false;
@@ -112,6 +111,7 @@ int PRP_RAND(const vector<int>& workload, unsigned int memsize){
 				pages_in_mem.push_back(workload[i]);
 			}
 			else {
+				uniform_int_distribution<int> gen(0 , pages_in_mem.size() - 1);
 				unsigned int index = gen(random_engine);
 				pages_in_mem[index] = workload[i];
 			}

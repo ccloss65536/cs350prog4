@@ -23,7 +23,7 @@ push:
 	git push 
 	@#Only in bash, read can have a prompt,
 	@#and put the entire imput string into an enviroment variable called $REPLY
-$(NAME1): $(NAME1).cpp 
+$(NAME1): $(NAME1).cpp policies.cpp workloads.cpp 
 	$(COMPILE) -c $(FLAGS) *.cpp
 	$(COMPILE) $(FLAGS) $(NAME1).o policies.o workloads.o -o $(NAME1)
 $(NAME2): $(NAME2).cpp

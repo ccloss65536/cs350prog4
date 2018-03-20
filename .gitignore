@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+prog4*
 
 #Swap files
 *.swp
