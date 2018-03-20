@@ -182,14 +182,14 @@ int PRP_CLOCK(const vector<int>& workload, unsigned int memsize) {
 
     Clock cache;
     for (auto access : workload) {
-        Clock::iterator iter;
-
-        // Check if page is already in cache
-        if ((iter = std::find_if(cache.begin(), cache.end(),
+        // Find page in cache if it is already there
+        Clock::iterator iter = std::find_if(cache.begin(), cache.end(),
             [access](const ClockEntry& elem) {
                 return elem.first == access;
             }
-        )) != cache.end()) {
+        );
+
+        if (iter != cache.end()) {
             // Cache hit
             hits++;
             iter->second = true;
