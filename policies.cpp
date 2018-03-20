@@ -190,11 +190,11 @@ int PRP_CLOCK(const vector<int>& workload, unsigned int memsize) {
                 return elem.first == access;
             }
         )) != cache.end()) {
-            // Cache miss
+            // Cache hit
             hits++;
             iter->second = true;
         } else {
-            // Cache hit
+            // Cache miss
             if (cache.size() < memsize) {
                 // Cache can fit another page
                 cache.emplace_back(access, true);
