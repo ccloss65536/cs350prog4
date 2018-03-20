@@ -1,7 +1,7 @@
 #Carl Closs, Timothy Shores
 SHELL := /bin/bash
 NUM = 4
-HEADERS = 
+HEADERS = workloads.hpp policies.hpp
 COMPILE = g++
 FLAGS = -g -Wall -Wextra -Wno-unused-parameter -lrt
 NAME1 = prog$(NUM)pagepolicy
@@ -24,8 +24,8 @@ push:
 	@#Only in bash, read can have a prompt,
 	@#and put the entire imput string into an enviroment variable called $REPLY
 $(NAME1): $(NAME1).cpp 
-	$(COMPILE) -c $(FLAGS) $(NAME1).cpp $(HEADERS)
-	$(COMPILE) $(FLAGS) *.o -o $(NAME1)
+	$(COMPILE) -c $(FLAGS) *.cpp
+	$(COMPILE) $(FLAGS) $(NAME1).o policies.o workloads.o -o $(NAME1)
 $(NAME2): $(NAME2).cpp
 	$(COMPILE) -c $(FLAGS) $(NAME2).c
 	$(COMPILE) $(FLAGS) $(NAME2).o -o $(NAME2)

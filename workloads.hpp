@@ -4,7 +4,7 @@
 #include <random>
 #include <ctime>
 
-using std::vector
+using std::vector;
 typedef void (*Workload)(vector<int>&, int );
 
 /*\brief Simulates a page workload that does not exhibit locality,
@@ -14,7 +14,7 @@ typedef void (*Workload)(vector<int>&, int );
  * should already be of the proper size
  * param num_pages the number of addressable pages
  */
-void workload_nonlocal(vector<int>& workload);
+void workload_nonlocal(vector<int>& workload, int num_pages);
 
 /*\brief Simulates a page workload following the 80-20 rule
  * which here will simply be pages 0 - 20 getting 80% of the accesses
@@ -23,7 +23,7 @@ void workload_nonlocal(vector<int>& workload);
  * should already be of the proper size
  * param num_pages the number of addressable pages
  */
-void workload_80_20(vector<int>& workload);
+void workload_80_20(vector<int>& workload,int num_pages);
 
 /*\brief Simulates a page workload that repeats 0,1,2,...,50 twice
  * 
@@ -31,4 +31,4 @@ void workload_80_20(vector<int>& workload);
  * should already be of the proper size
  * param num_pages the number of addressable pages
  */
-void workload_looping(vector<int>& workload);
+void workload_looping(vector<int>& workload, int num_pages);
