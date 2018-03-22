@@ -3,7 +3,7 @@ SHELL := /bin/bash
 NUM = 4
 HEADERS = workloads.hpp policies.hpp
 COMPILE = g++
-FLAGS = -g -std=c++11 -Wall -Wextra -Wno-unused-parameter -lrt
+FLAGS = -g -std=c++11 -Wall -Wextra -Wno-unused-parameter -O3 -lrt 
 NAME1 = prog$(NUM)pagepolicy
 NAME2 = nil
 FILE =  Prog$(NUM)Closs_ccloss1.tar.gz
